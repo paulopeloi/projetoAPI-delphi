@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2020/12/01 08:20:57.544,C:\Users\Peloi\Desktop\ServidorMobile\APK.API.dproj=C:\Users\Peloi\RadStudio\Project1.dproj</Transaction>
+    <Transaction>2020/12/01 08:33:07.351,=C:\Users\Peloi\Desktop\ServidorMobile\Unit1.pas</Transaction>
+    <Transaction>2020/12/01 08:33:54.783,C:\Users\Peloi\Desktop\ServidorMobile\src\Controller\Controller.Materia.pas=C:\Users\Peloi\Desktop\ServidorMobile\Unit1.pas</Transaction>
+    <Transaction>2020/12/01 08:42:04.425,=C:\Users\Peloi\Desktop\ServidorMobile\Unit1.pas</Transaction>
+    <Transaction>2020/12/01 08:42:31.266,C:\Users\Peloi\Desktop\ServidorMobile\src\Model\Model.Params.pas=C:\Users\Peloi\Desktop\ServidorMobile\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

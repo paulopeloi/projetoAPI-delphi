@@ -1,0 +1,33 @@
+unit Controller.Materia;
+
+interface
+
+uses
+  Horse,
+  System.JSON,
+  GenericQuery;
+
+procedure Registry;
+
+procedure GetMateria(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+
+implementation
+
+procedure Registry;
+begin
+  THorse.Get('/materia', GetMateria);
+end;
+
+procedure GetMateria(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+begin
+  Res.Send<TJSONArray>(
+    TGenericQuery
+      .New
+      .SQL('select * from materia')
+      .OpenArray
+    );
+end;
+
+
+
+end.

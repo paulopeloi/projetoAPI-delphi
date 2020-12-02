@@ -1,0 +1,63 @@
+unit Controller.Materia;
+
+interface
+
+uses
+  Horse,
+  System.JSON,
+  GenericQuery;
+
+procedure Registry;
+
+procedure GetMateria(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure InsertMateria(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure GetMateriaById(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+
+implementation
+
+uses
+  System.SysUtils;
+
+procedure Registry;
+begin
+  THorse
+    .Get('/materia', GetMateria)
+    .Get('/materia/:id', GetMateriaById)
+    .Post('/materia', InsertMateria);
+end;
+
+procedure GetMateria(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+begin
+  Res.Send<TJSONArray>(
+    TGenericQuery
+      .New
+      .SQL('select * from materia')
+      .OpenArray
+    );
+end;
+
+procedure InsertMateria(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  vMateria : TJSONObject;
+begin
+  vMateria := TJSONObject.ParseJSONValue ( Req.Body ) as TJSONObject;
+
+  if
+    TGenericQuery
+      .New
+      .SQL('insert into materia')
+      .SQL('(nome, professor, dia_semana)')
+      .SQL('values (')
+      .SQL(vMateria.GetValue('nome').Value.QuotedString + ',')
+      .SQL(vMateria.GetValue('professor').Value.QuotedString + ',')
+      .SQL(vMateria.GetValue('dia_semana').Value.QuotedString)
+      .SQL(')')
+      .Execute
+  then
+    Res.Send('Registro incluido com sucesso!').Status(THTTPStatus.Created)
+  else
+    Res.Send('Falha ao incluir registro.').Status(THTTPStatus.BadRequest);
+end;
+
+
+end.

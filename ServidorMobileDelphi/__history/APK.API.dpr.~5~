@@ -1,0 +1,21 @@
+program APK.API;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  Horse,
+  Horse.Jhonson,
+  Horse.Cors,
+  Controller.Materia in 'src\Controller\Controller.Materia.pas';
+
+begin
+  THorse
+    .Use(Jhonson)
+    .Use(Cors);
+
+    Writeln('Server is running on port 9000');
+
+  THorse.Listen(9000);
+end.

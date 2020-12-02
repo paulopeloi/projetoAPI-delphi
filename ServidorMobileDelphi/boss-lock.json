@@ -1,0 +1,38 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2020-12-01T08:21:42.441477-04:00",
+	"installedModules": {
+		"github.com/hashload/horse": {
+			"name": "horse",
+			"version": "v2.0.6",
+			"hash": "cca1769dfab681cfd26ae8499f9045e1",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-cors": {
+			"name": "horse-cors",
+			"version": "1.0.2",
+			"hash": "f1fd91acb4d43c9a778249d447027f16",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/jhonson": {
+			"name": "jhonson",
+			"version": "1.0.7",
+			"hash": "e0a2cfad431f565769ebe2815299924b",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/willhubner/genericquery": {
+			"name": "genericquery",
+			"version": "master",
+			"hash": "e0e5405fb980d4dbf2f6fdf00326515a",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
